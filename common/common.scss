@@ -1,0 +1,145 @@
+/**
+ * Copyright 2017 Communication Services for the Deaf, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+$pph-blue: #0575BB;
+$pph-blue-light: #1B9AD6;
+$pph-blue-dark: #1D293F;
+$pph-white: #FFFFFF;
+$pph-gray-light: #F7F7F7;
+$pph-gray: #999999;
+$pph-gray-dark: #4C4C4C;
+$pph-black: #333333;
+
+@mixin custom-font($font-name, $base-url) {
+  font-family: $font-name;
+  src: url("#{$base-url}.eot");
+  src: url("#{$base-url}.eot?#iefix") format('embedded-opentype'),
+       url("#{$base-url}.woff") format('woff'),
+       url("#{$base-url}.ttf") format('truetype'),
+       url("#{$base-url}.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  @include custom-font('WH_light', 'https://csdlegal-public-policy.s3.amazonaws.com/fonts/whitney/WhitneySSm-Light');
+}
+
+@font-face {
+  @include custom-font('WH_reg', 'https://csdlegal-public-policy.s3.amazonaws.com/fonts/whitney/WhitneySSm-Book');
+}
+
+@font-face {
+  @include custom-font('WH_reg_italic', 'https://csdlegal-public-policy.s3.amazonaws.com/fonts/whitney/WhitneySSm-BookItalic');
+}
+
+@font-face {
+  @include custom-font('WH_medium', 'https://csdlegal-public-policy.s3.amazonaws.com/fonts/whitney/WhitneySSm-Medium');
+}
+
+@font-face {
+  @include custom-font('WH_semibold', 'https://csdlegal-public-policy.s3.amazonaws.com/fonts/whitney/WhitneySSm-Semibold');
+}
+
+body {
+  font-family: 'WH_light', sans-serif;
+  font-size: 20px;
+  // Allow discourse to use the color pallet by not setting color here.
+}
+
+h1 {
+  color: $pph-black;
+  font-size: 40px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2 {
+  $base-padding: 20px;
+  $border-style: 1px solid $pph-blue;
+  $border-height: 7px;
+  $border-margin: $base-padding - $border-height;
+
+  color: $pph-blue;
+  font-family: 'WH_reg', sans-serif;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  text-align:center;
+  padding: $border-margin $base-padding;
+
+  &:before,
+  &:after {
+    border-left: $border-style;
+    border-right: $border-style;
+    content: '';
+    display: block;
+    padding: 0px;
+    height: $border-height;
+  }
+
+  &:before {
+    border-top: $border-style;
+    margin-bottom: $border-margin;
+  }
+
+  &:after {
+    border-bottom: $border-style;
+    margin-top: $border-margin;
+  }
+}
+
+h3 {
+  color: $pph-black;
+  font-family: 'WH_semibold', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h4 {
+  color: $pph-gray;
+  font-family: 'WH_medium', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  color: $pph-gray;
+  font-family: 'WH_light', sans-serif;
+
+  &:visited {
+    color: $pph-blue-light;
+  }
+}
+
+.topic-excerpt, .topic-body, .topic-post {
+  a {
+    color: $pph-blue-light;
+    font-family: 'WH_semibold', sans-serif;
+
+    &:visited {
+      color: $pph-gray;
+    }
+  }
+}
+
+.topic-excerpt, .topic-post {
+  color: $pph-gray;
+  font-family: 'WH_reg', sans-serif;
+  font-size: 12px;
+}
