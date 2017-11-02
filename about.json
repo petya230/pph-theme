@@ -1,0 +1,18 @@
+{
+  "name": "CSD Public Policy Hub",
+  "about_url": "https://github.com/C-S-D/pph-theme/blob/master/README.md",
+  "color_schemes": {
+    "CSD Public Policy Hub": {
+      "primary": "333333",
+      "secondary": "ffffff",
+      "tertiary": "1b9ad6",
+      "quaternary": "e45735",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "ffff4d",
+      "danger": "e45735",
+      "success": "009900",
+      "love": "fa6c8d"
+    }
+  }
+}
