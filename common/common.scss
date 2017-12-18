@@ -14,14 +14,19 @@
  * limitations under the License.
  */
 
-$pph-blue: #0575BB;
-$pph-blue-light: #1B9AD6;
-$pph-blue-dark: #1D293F;
-$pph-white: #FFFFFF;
-$pph-gray-light: #F7F7F7;
-$pph-gray: #999999;
-$pph-gray-dark: #4C4C4C;
-$pph-black: #333333;
+$pph-navy: #04446e;
+$pph-blue-dark: #0575bb;
+$pph-blue: #1b9ad6;
+$pph-blue-light: #7bc0d9;
+$pph-yellow: #ffd07e;
+$pph-orange: #f8a33f;
+$pph-white: #fff;
+$pph-gray-light: #f7f7f7;
+$pph-gray: #999;
+$pph-dark-gray: #4c4c4c; // sic from style guide
+$pph-black: #222;
+$pph-red: #f70000;
+$pph-gray-dark: $pph-dark-gray;
 
 @mixin custom-font($font-name, $base-url) {
   font-family: $font-name;
@@ -58,88 +63,111 @@ body {
   font-family: 'WH_light', sans-serif;
   font-size: 20px;
   // Allow discourse to use the color pallet by not setting color here.
-}
 
-h1 {
-  color: $pph-black;
-  font-size: 40px;
-  font-weight: normal;
-  font-style: normal;
-}
-
-h2 {
-  $base-padding: 20px;
-  $border-style: 1px solid $pph-blue;
-  $border-height: 7px;
-  $border-margin: $base-padding - $border-height;
-
-  color: $pph-blue;
-  font-family: 'WH_reg', sans-serif;
-  font-size: 32px;
-  font-weight: normal;
-  font-style: normal;
-  text-align:center;
-  padding: $border-margin $base-padding;
-
-  &:before,
-  &:after {
-    border-left: $border-style;
-    border-right: $border-style;
-    content: '';
-    display: block;
-    padding: 0px;
-    height: $border-height;
+  h1, h2, h3, h4, h5, h6 {
+    line-height: normal;
   }
 
-  &:before {
-    border-top: $border-style;
-    margin-bottom: $border-margin;
+  h1 {
+    color: $pph-black;
+    font-size: 40px;
+    font-weight: normal;
+    font-style: normal;
   }
 
-  &:after {
-    border-bottom: $border-style;
-    margin-top: $border-margin;
-  }
-}
+  h2 {
+    $base-padding: 20px;
+    $border-style: 1px solid $pph-blue;
+    $border-height: 7px;
+    $border-margin: $base-padding - $border-height;
 
-h3 {
-  color: $pph-black;
-  font-family: 'WH_semibold', sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-  font-style: normal;
-}
+    color: $pph-blue;
+    font-family: 'WH_reg', sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    text-align:center;
+    padding: $border-margin $base-padding;
 
-h4 {
-  color: $pph-gray;
-  font-family: 'WH_medium', sans-serif;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-}
+    &:before,
+    &:after {
+      border-left: $border-style;
+      border-right: $border-style;
+      content: '';
+      display: block;
+      padding: 0px;
+      height: $border-height;
+    }
 
-a {
-  color: $pph-gray;
-  font-family: 'WH_light', sans-serif;
+    &:before {
+      border-top: $border-style;
+      margin-bottom: $border-margin;
+    }
 
-  &:visited {
-    color: $pph-blue-light;
-  }
-}
-
-.topic-excerpt, .topic-body, .topic-post {
-  a {
-    color: $pph-blue-light;
-    font-family: 'WH_semibold', sans-serif;
-
-    &:visited {
-      color: $pph-gray;
+    &:after {
+      border-bottom: $border-style;
+      margin-top: $border-margin;
     }
   }
-}
 
-.topic-excerpt, .topic-post {
-  color: $pph-gray;
-  font-family: 'WH_reg', sans-serif;
-  font-size: 12px;
+  h3 {
+    color: $pph-black;
+    font-family: 'WH_light', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  h4 {
+    color: $pph-gray;
+    font-family: 'WH_medium', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  a {
+    color: $pph-gray;
+    font-family: 'WH_light', sans-serif;
+
+    &:visited {
+      color: $pph-blue-light;
+    }
+  }
+
+  .topic-excerpt, .topic-body, .topic-post {
+    a {
+      color: $pph-blue-light;
+      font-family: 'WH_semibold', sans-serif;
+
+      &:visited {
+        color: $pph-gray;
+      }
+    }
+  }
+
+  .topic-excerpt, .topic-post {
+    color: $pph-gray;
+    font-family: 'WH_reg', sans-serif;
+    font-size: 12px;
+  }
+
+  input {
+    &[type="text"], &[type="password"], &[type="datetime"], &[type="datetime-local"], &[type="date"], &[type="month"], &[type="time"], &[type="week"], &[type="number"], &[type="email"], &[type="url"], &[type="search"], &[type="tel"], &[type="color"] {
+      background-color: $pph-white;
+      border: 1px solid $pph-blue;
+      border-radius: 0;
+      box-shadow: none;
+      color: $pph-blue-light;
+
+      &:focus {
+        border-color: $pph-yellow
+      }
+    }
+  }
+
+  .d-header {
+    color: $pph-white;
+    background-color: $pph-black;
+  }
 }
