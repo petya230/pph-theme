@@ -170,4 +170,13 @@ body {
     color: $pph-white;
     background-color: $pph-black;
   }
+
+  .extra-info-wrapper {
+    color: $pph-white;
+
+    .topic-link,
+    .topic-statuses i {
+      color: $pph-blue-light;
+    }
+  }
 }
