@@ -128,11 +128,15 @@ body {
   }
 
   a {
-    color: $pph-gray;
+    color: $pph-blue;
     font-family: 'WH_light', sans-serif;
 
     &:visited {
-      color: $pph-blue-light;
+      color: $pph-blue;
+    }
+
+    &:hover {
+      color: $pph-navy;
     }
   }
 
