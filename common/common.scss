@@ -62,10 +62,11 @@ $pph-gray-dark: $pph-dark-gray;
 body {
   font-family: 'WH_light', sans-serif;
   font-size: 20px;
+  line-height: 30px;
   // Allow discourse to use the color pallet by not setting color here.
 
   h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
+    line-height: 30px;
   }
 
   h1 {
