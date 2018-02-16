@@ -1,0 +1,47 @@
+<nav class="csd-header">
+  <ul class="csd-header__nav-links wrap">
+    <li class="csd-header__nav-link csd-header__logo">
+      <a href="//www.csd.org/">
+        <img
+          src="//www.csd.org/wp-content/uploads/2016/12/CSDLogo_350px_white.png"
+          alt="CSD Logo"
+          width="112"
+          height="35">
+      </a>
+    </li>
+    <li class="csd-header__nav-link csd-header--hide-mobile">
+      <a href="//www.csd.org/stories/">Stories</a>
+    </li>
+    <li class="csd-header__nav-link csd-header--hide-mobile">
+      <a href="//www.csd.org/one-world/">One World</a>
+    </li>
+    <li class="csd-header__nav-link csd-header--hide-mobile">
+      <a href="//www.csd.org/innovations/">Innovations</a>
+    </li>
+    <li class="csd-header__nav-link csd-header--hide-mobile">
+      <a href="/">Public Policy</a>
+    </li>
+    <li class="csd-header__nav-link csd-header--hide-mobile">
+      <a href="//www.csd.org/about/">Who We Are</a>
+    </li>
+    <li class="csd-header__nav-link csd-header__nav-link--right csd-header--hide-mobile">
+      <a class="btn btn-primary" href="//www.csd.org/get-involved/">Get Involved</a>
+    </li>
+    <li class="csd-header__nav-link csd-header__nav-link--right csd-header--hide-mobile">
+      <a href="//www.csd.org/careers/">Careers</a>
+    </li>
+  </ul>
+</nav>
+
+<script type="text/discourse-plugin" version="0.4">
+  api.decorateWidget('hamburger-menu:generalLinks', function() {
+    return [
+      { href: '//www.csd.org/stories/', rawLabel: 'Stories' },
+      { href: '//www.csd.org/one-world/', rawLabel: 'One World' },
+      { href: '//www.csd.org/innovations/', rawLabel: 'Innovations' },
+      { href: '//www.csd.org/about/', rawLabel: 'Who We Are' },
+      { href: '//www.csd.org/get-involved/', rawLabel: 'Get Involved' },
+      { href: '//www.csd.org/careers/', rawLabel: 'Careers' }
+    ];
+  });
+</script>
