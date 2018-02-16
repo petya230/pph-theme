@@ -217,9 +217,17 @@ body {
   }
 
   &__nav-links {
+    $base-padding: 10px;
+    $wide-padding: 40px;
+    $padding-breakpoint: 1110px + (($wide-padding - $base-padding) * 2);
+
     list-style: none;
     margin: 0 auto;
-    padding: 10px 10px 0;
+    padding: $base-padding $base-padding 0;
+
+    @media screen and (min-width: $padding-breakpoint) {
+      padding: $base-padding $wide-padding 0;
+    }
   }
 
   &__nav-link {
