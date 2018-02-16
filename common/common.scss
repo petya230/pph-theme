@@ -76,7 +76,7 @@ body {
     font-style: normal;
   }
 
-  h2 {
+  h2:not(#site-text-logo) {
     $base-padding: 20px;
     $border-style: 1px solid $pph-blue;
     $border-height: 7px;
@@ -197,6 +197,14 @@ body {
       color: $pph-blue-light;
     }
   }
+}
+
+#site-text-logo,
+.d-header .title a,
+.d-header .title a:active,
+.d-header .title a:hover,
+.d-header .title a:visited {
+  color: $pph-blue-light;
 }
 
 .csd-header {
